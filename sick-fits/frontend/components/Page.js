@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../components/Header';
 import Meta from '../components/Meta';
-import styled from 'styled-components';
+import styled, {ThemeProvider, injectGlobal} from 'styled-components';
 
 const theme = {
     red: '#FF0000',
@@ -16,14 +16,14 @@ const theme = {
 
 const StyledPage = styled.div`
     background: white;
-    color: black;
+    color: ${props => props.theme.black};
 `;
 
 //following code creates restraints for our
 // product grid so it does not span across the
 // whole page
 const Inner = styled.div `
-    max-width: 1000px;
+    max-width: ${props => props.theme.maxWidth};
     margin: 0 auto;
     padding: 2rem;
 `;
@@ -31,6 +31,7 @@ const Inner = styled.div `
 class Page extends Component {
     render() {
         return (
+            <ThemeProvider theme = {theme}>
             <StyledPage>
                 <Meta />
                 <Header />
@@ -38,6 +39,7 @@ class Page extends Component {
                     {this.props.children}
                 </Inner>
             </StyledPage>
+            </ThemeProvider>
         );
     }
 }
