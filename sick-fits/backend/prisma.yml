@@ -1,8 +1,8 @@
-endpoint: ${env: PRISMA_ENDPOINT}
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://us1.prisma.sh/delaynelabove-4a61d7/sick-fits-d/dev
 datamodel: datamodel.prisma
 
-# secret: ${env: PRISMA_ENDPOINT}
-
+# secret: ${env: PRISMA_SECRET}
 hooks:
-  post-deploy:
-      - graphQL get-schema -p prisma
+    post-deploy:
+        - graphql get-schema -p prisma
