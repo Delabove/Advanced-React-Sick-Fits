@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/delaynelabove-4a61d7/sick-fits-d/dev
-# timestamp: Tue Sep 01 2020 16:23:20 GMT-0500 (Central Daylight Time)
+# timestamp: Thu Sep 10 2020 08:50:57 GMT-0500 (Central Daylight Time)
 
 type AggregateUser {
   count: Int!
@@ -72,7 +72,6 @@ type User implements Node {
   id: ID!
   name: String!
   email: String!
-  phone: String!
 }
 
 """A connection to a list of items."""
@@ -89,7 +88,6 @@ input UserCreateInput {
   id: ID
   name: String!
   email: String!
-  phone: String!
 }
 
 """An edge in a connection."""
@@ -108,15 +106,12 @@ enum UserOrderByInput {
   name_DESC
   email_ASC
   email_DESC
-  phone_ASC
-  phone_DESC
 }
 
 type UserPreviousValues {
   id: ID!
   name: String!
   email: String!
-  phone: String!
 }
 
 type UserSubscriptionPayload {
@@ -161,13 +156,11 @@ input UserSubscriptionWhereInput {
 input UserUpdateInput {
   name: String
   email: String
-  phone: String
 }
 
 input UserUpdateManyMutationInput {
   name: String
   email: String
-  phone: String
 }
 
 input UserWhereInput {
@@ -299,46 +292,6 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   email_not_ends_with: String
-  phone: String
-
-  """All values that are not equal to given value."""
-  phone_not: String
-
-  """All values that are contained in given list."""
-  phone_in: [String!]
-
-  """All values that are not contained in given list."""
-  phone_not_in: [String!]
-
-  """All values less than the given value."""
-  phone_lt: String
-
-  """All values less than or equal the given value."""
-  phone_lte: String
-
-  """All values greater than the given value."""
-  phone_gt: String
-
-  """All values greater than or equal the given value."""
-  phone_gte: String
-
-  """All values containing the given string."""
-  phone_contains: String
-
-  """All values not containing the given string."""
-  phone_not_contains: String
-
-  """All values starting with the given string."""
-  phone_starts_with: String
-
-  """All values not starting with the given string."""
-  phone_not_starts_with: String
-
-  """All values ending with the given string."""
-  phone_ends_with: String
-
-  """All values not ending with the given string."""
-  phone_not_ends_with: String
 }
 
 input UserWhereUniqueInput {
